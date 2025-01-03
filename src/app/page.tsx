@@ -1,52 +1,14 @@
 import Image from "next/image";
+
 import { FaAlignRight, FaBars, FaMagnifyingGlass } from "react-icons/fa6";
+import { Header } from "./components/Header";
+import { BrowserProperties } from "./components/BrowserProperties";
+import { ListLocations } from "./components/ListLocations";
 
 export default function Home() {
   return (
     <>
-      <header className="fixed px-4 text-primaryText top-0 left-0 right-0 w-full z-10 flex items-center justify-between h-20 border-b-2 border-gray-100 bg-[#EDECFB]">
-        <div className="w-full max-w-[1600px] mx-auto flex items-center justify-between">
-          <div className="flex gap-4 items-center">
-            <div className="flex items-center">
-              <Image src="/logo.png" width={32} height={32} alt="logo" />
-              <span className="text-xl font-bold text-[#100A55]">
-                Real Estate
-              </span>
-            </div>
-
-            <ul className="gap-16 text-lg font-medium ml-20 hidden lg:flex">
-              <li>
-                <button>Rent</button>
-              </li>
-              <li>
-                <button>Buy</button>
-              </li>
-              <li>
-                <button>Sell</button>
-              </li>
-              <li>
-                <button>Manage</button> <button>Property</button>
-              </li>
-              <li>
-                <button>Resources</button>
-              </li>
-            </ul>
-          </div>
-          <div className="gap-2 items-center hidden lg:flex">
-            <button className=" font-semibold border-primaryText/10 border-2 px-4 py-2 rounded-lg">
-              Login
-            </button>
-            <button className="bg-primary text-white px-4 py-2 rounded-lg">
-              Sign Up
-            </button>
-          </div>
-          <div className="items-center  lg:hidden flex">
-            <button>
-              <FaBars color="#000929" size={24} />
-            </button>
-          </div>
-        </div>
-      </header>
+      <Header />
       <main className="mt-20">
         <section className="bg-gradient-to-b from-[#E0DEF7] to-transparent px-4 lg:px-0">
           <div className=" lg:bg-[url('/house.png')] bg-[length:720px] bg-w bg-no-repeat bg-right-bottom">
@@ -60,45 +22,7 @@ export default function Home() {
                   without any commisions.
                 </h2>
               </div>
-              <div className="lg:w-8/12 w-full max-w-4xl">
-                <ul className="flex justify-around  font-medium w-full  lg:w-5/12 rounded-t-lg bg-white ">
-                  <li className="w-full flex justify-center">
-                    <button className="border-b border-gray-200 p-3 w-full text-center">
-                      Rent
-                    </button>
-                  </li>
-                  <li className="w-full flex justify-center">
-                    <button className="border-b border-gray-200 p-3 w-full text-center">
-                      Buy
-                    </button>
-                  </li>
-                  <li className="w-full flex justify-center">
-                    <button className="border-b border-gray-200 p-3 w-full text-center">
-                      Sell
-                    </button>
-                  </li>
-                </ul>
-                <div className="flex items-center shadow-xl shadow-primary/10 bg-white p-3 rounded-b-lg lg:rounded-e-lg">
-                  <div className="w-full">
-                    <input
-                      type="text"
-                      placeholder="Search location"
-                      className="w-full p-3 bg-white focus:outline-none"
-                    />
-                    <h2 className="font-bold pl-3">Presidente Prudente </h2>
-                  </div>
-                  <button className="bg-primary text-white px-5 py-3 rounded-lg">
-                    <FaMagnifyingGlass
-                      className="lg:hidden flex"
-                      color="#fff"
-                      size={16}
-                    />
-                    <h3 className="font-semibold lg:flex hidden text-nowrap">
-                      Browser Properties
-                    </h3>
-                  </button>
-                </div>
-              </div>
+              <BrowserProperties />
               <div className="flex gap-x-4 lg:gap-x-20 mt-6">
                 <div className="flex flex-col gap-3">
                   <Image
@@ -219,7 +143,10 @@ export default function Home() {
             </ul>
           </div>
         </section>
-        <section className="px-4 lg:px-0 bg-gradient-to-t from-[#F0EFFB] to-transparent justify-center flex flex-col pb-20">
+        <section
+          id="properties"
+          className="px-4 lg:px-0 bg-gradient-to-t from-[#F0EFFB] to-transparent justify-center flex flex-col pb-20"
+        >
           <div className="max-w-[1200px] w-full mx-auto flex flex-col gap-10 pb-10">
             <div className="p-3 mx-auto text-center flex flex-col gap-4">
               <h2 className="text-4xl font-semibold text-primaryText">
@@ -244,7 +171,7 @@ export default function Home() {
                   <span>Sell</span>
                 </button>
               </div>
-              <div className="flex gap-3 py-2 lg:py-0 px-4 border border-[#E0DEF7] bg-[#f7f7fd] rounded-md items-center">
+              <div className="relative flex gap-3 py-2 lg:py-0 px-4 border border-[#E0DEF7] bg-[#f7f7fd] rounded-md items-center">
                 <FaMagnifyingGlass
                   className=" flex"
                   color="#7065F0"
@@ -255,12 +182,12 @@ export default function Home() {
                   placeholder="Search..."
                   className="w-full px-1 py-2 bg-transparent focus:outline-none"
                 />
+                <ListLocations className="top-14" />
               </div>
             </div>
             <ul className="grid lg:grid-cols-3 gap-10">
               <li className="rounded-lg overflow-hidden  border border-[#E0DEF7]">
-             
-                        <div  className="bg-[url(/house-1.png)] aspect-[3/2] bg-cover bg-center bg-no-repeat"></div>
+                <div className="bg-[url(/house-1.png)] aspect-[3/2] bg-cover bg-center bg-no-repeat"></div>
                 <div className="px-8 py-4 flex flex-col gap-2.5 bg-white">
                   <div className="flex items-end pt-4">
                     <h3 className="text-2xl font-bold text-primary">$2,095</h3>
@@ -303,7 +230,7 @@ export default function Home() {
               </li>
               <li className=" ">
                 <div>
-                        <div className="bg-[url(/icon-rent.png)]"></div>
+                  <div className="bg-[url(/icon-rent.png)]"></div>
                   {/* <Image
                     className="w-full"
                     src="/house-1.png"
@@ -354,7 +281,7 @@ export default function Home() {
               </li>
               <li className=" ">
                 <div>
-                        <div className="bg-[url(/icon-rent.png)]"></div>
+                  <div className="bg-[url(/icon-rent.png)]"></div>
                   {/* <Image
                     className="w-full"
                     src="/house-1.png"
