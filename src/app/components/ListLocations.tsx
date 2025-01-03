@@ -86,6 +86,7 @@ export const ListLocations = (props:{
 
 
   return (
+    
     <ul className={`${props.className} ${isOpen ? "flex" : "hidden"} absolute left-0 z-20 w-full flex-col gap-2 bg-white p-4 rounded-lg mt-2 max-h-32 overflow-y-scroll`}>
       {locations.map((location) => (
         <li

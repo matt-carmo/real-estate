@@ -51,8 +51,7 @@ export const BrowserProperties = () => {
     }
   };
 
-  return (
-    <div className="lg:w-8/12 w-full max-w-4xl relative">
+  return (    <div className="lg:w-8/12 w-full max-w-4xl relative">
       <ul className="flex justify-around  font-medium w-full  lg:w-5/12 rounded-t-lg bg-white ">
         <li className="w-full flex justify-center">
           <button

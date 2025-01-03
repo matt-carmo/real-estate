@@ -4,6 +4,7 @@ import { FaAlignRight, FaBars, FaMagnifyingGlass } from "react-icons/fa6";
 import { Header } from "./components/Header";
 import { BrowserProperties } from "./components/BrowserProperties";
 import { ListLocations } from "./components/ListLocations";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -22,7 +23,9 @@ export default function Home() {
                   without any commisions.
                 </h2>
               </div>
-              <BrowserProperties />
+              <Suspense fallback={<div>Loading...</div>}>
+                <BrowserProperties />
+              </Suspense>
               <div className="flex gap-x-4 lg:gap-x-20 mt-6">
                 <div className="flex flex-col gap-3">
                   <Image
@@ -182,7 +185,10 @@ export default function Home() {
                   placeholder="Search..."
                   className="w-full px-1 py-2 bg-transparent focus:outline-none"
                 />
+                 <Suspense fallback={<div>Loading...</div>}>
+                {/* <BrowserProperties /> */}
                 <ListLocations className="top-14" />
+              </Suspense>
               </div>
             </div>
             <ul className="grid lg:grid-cols-3 gap-10">
