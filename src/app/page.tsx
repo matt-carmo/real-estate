@@ -5,8 +5,14 @@ import { Header } from "./components/Header";
 import { BrowserProperties } from "./components/BrowserProperties";
 import { ListLocations } from "./components/ListLocations";
 import { Suspense } from "react";
+import { locations } from "./utils/locations";
+import { generateHouses } from "./utils/generate-random-houses";
+import { Houses } from "./components/Houses";
+import { Filter } from "./components/Filter";
 
 export default function Home() {
+
+  console.log(generateHouses(10))
   return (
     <>
       <Header />
@@ -159,188 +165,10 @@ export default function Home() {
                 Some of our picked properties near you location.
               </h5>
             </div>
-            <div className="flex justify-between flex-col lg:flex-row gap-y-4 lg:gap-y-0">
-              <div className="bg-[#f7f7fd] order-1 lg:order-2 lg:max-w-80 border border-[#E0DEF7] items-center justify-center flex gap-4 px-4 py-2 rounded-lg">
-                <button className="flex items-center gap-2 w-full lg:w-auto bg-white py-2 px-3 rounded-lg border-[#E0DEF7] border">
-                  <Image src="/icon-rent.png" width={20} height={20} alt="" />
-                  <span>Rent</span>
-                </button>
-                <button className="flex items-center gap-2 w-full lg:w-auto  py-2 px-3 rounded-lg border-[#E0DEF7] opacity-40">
-                  <Image src="/icon-buy.png" width={20} height={20} alt="" />
-                  <span>Buy</span>
-                </button>
-                <button className="flex items-center gap-2 w-full lg:w-auto py-2 px-3 rounded-lg border-[#E0DEF7] opacity-40">
-                  <Image src="/icon-sell.png" width={20} height={20} alt="" />
-                  <span>Sell</span>
-                </button>
-              </div>
-              <div className="relative flex gap-3 py-2 lg:py-0 px-4 border border-[#E0DEF7] bg-[#f7f7fd] rounded-md items-center">
-                <FaMagnifyingGlass
-                  className=" flex"
-                  color="#7065F0"
-                  size={30}
-                />
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="w-full px-1 py-2 bg-transparent focus:outline-none"
-                />
-                 <Suspense fallback={<div>Loading...</div>}>
-                {/* <BrowserProperties /> */}
-                <ListLocations className="top-14" />
-              </Suspense>
-              </div>
-            </div>
-            <ul className="grid lg:grid-cols-3 gap-10">
-              <li className="rounded-lg overflow-hidden  border border-[#E0DEF7]">
-                <div className="bg-[url(/house-1.png)] aspect-[3/2] bg-cover bg-center bg-no-repeat"></div>
-                <div className="px-8 py-4 flex flex-col gap-2.5 bg-white">
-                  <div className="flex items-end pt-4">
-                    <h3 className="text-2xl font-bold text-primary">$2,095</h3>
-
-                    <span className="mb-0.5 text-gray-500">/month</span>
-                  </div>
-                  <h2 className="text-2xl font-bold text-primaryText">
-                    Palm Harbor
-                  </h2>
-                  <span className="text-primaryText/50">
-                    2699 Green Valley, Highland Lake, FL
-                  </span>
-                  <hr />
-                  <div className="flex gap-x-4 text-sm justify-between">
-                    <div className="text-primaryText flex gap-2">
-                      <Image src="/bed.png" width={20} height={20} alt="" />
-                      <span className="text-primaryText/70 font-medium">
-                        2 Beds
-                      </span>
-                    </div>
-                    <div className="text-primaryText flex gap-2">
-                      <Image src="/bath.png" width={20} height={20} alt="" />
-                      <span className="text-primaryText/70 font-medium">
-                        2 Bathrooms
-                      </span>
-                    </div>
-                    <div className="text-primaryText flex gap-2">
-                      <Image
-                        src="/square-meters.png"
-                        width={20}
-                        height={20}
-                        alt=""
-                      />
-                      <span className="text-primaryText/70 font-medium">
-                        5x7 m²
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className=" ">
-                <div>
-                  <div className="bg-[url(/icon-rent.png)]"></div>
-                  {/* <Image
-                    className="w-full"
-                    src="/house-1.png"
-                    width={300}
-                    height={200}
-                    alt=""
-                  /> */}
-                </div>
-                <div className="px-8 py-4 flex flex-col gap-2.5 bg-white rounded-b-lg border border-[#E0DEF7]">
-                  <div className="flex items-end pt-4">
-                    <h3 className="text-2xl font-bold text-primary">$2,095</h3>
-
-                    <span className="mb-0.5 text-gray-500">/month</span>
-                  </div>
-                  <h2 className="text-2xl font-bold text-primaryText">
-                    Palm Harbor
-                  </h2>
-                  <span className="text-primaryText/50">
-                    2699 Green Valley, Highland Lake, FL
-                  </span>
-                  <hr />
-                  <div className="flex gap-x-4 text-sm justify-between">
-                    <div className="text-primaryText flex gap-2">
-                      <Image src="/bed.png" width={20} height={20} alt="" />
-                      <span className="text-primaryText/70 font-medium">
-                        2 Beds
-                      </span>
-                    </div>
-                    <div className="text-primaryText flex gap-2">
-                      <Image src="/bath.png" width={20} height={20} alt="" />
-                      <span className="text-primaryText/70 font-medium">
-                        2 Bathrooms
-                      </span>
-                    </div>
-                    <div className="text-primaryText flex gap-2">
-                      <Image
-                        src="/square-meters.png"
-                        width={20}
-                        height={20}
-                        alt=""
-                      />
-                      <span className="text-primaryText/70 font-medium">
-                        5x7 m²
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li className=" ">
-                <div>
-                  <div className="bg-[url(/icon-rent.png)]"></div>
-                  {/* <Image
-                    className="w-full"
-                    src="/house-1.png"
-                    width={300}
-                    height={200}
-                    alt=""
-                  /> */}
-                </div>
-                <div className="px-8 py-4 flex flex-col gap-2.5 bg-white rounded-b-lg border border-[#E0DEF7]">
-                  <div className="flex items-end pt-4">
-                    <h3 className="text-2xl font-bold text-primary">$2,095</h3>
-
-                    <span className="mb-0.5 text-gray-500">/month</span>
-                  </div>
-                  <h2 className="text-2xl font-bold text-primaryText">
-                    Palm Harbor
-                  </h2>
-                  <span className="text-primaryText/50">
-                    2699 Green Valley, Highland Lake, FL
-                  </span>
-                  <hr />
-                  <div className="flex gap-x-4 text-sm justify-between">
-                    <div className="text-primaryText flex gap-2">
-                      <Image src="/bed.png" width={20} height={20} alt="" />
-                      <span className="text-primaryText/70 font-medium">
-                        2 Beds
-                      </span>
-                    </div>
-                    <div className="text-primaryText flex gap-2">
-                      <Image src="/bath.png" width={20} height={20} alt="" />
-                      <span className="text-primaryText/70 font-medium">
-                        2 Bathrooms
-                      </span>
-                    </div>
-                    <div className="text-primaryText flex gap-2">
-                      <Image
-                        src="/square-meters.png"
-                        width={20}
-                        height={20}
-                        alt=""
-                      />
-                      <span className="text-primaryText/70 font-medium">
-                        5x7 m²
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
+            <Filter />
+            <Houses />
           </div>
-          <button className="bg-[#100A55] text-white px-5 py-3 rounded-lg font-semibold mx-auto">
-            Browser more properties
-          </button>
+          
         </section>
         <section className="bg-[#100A55] text-white py-20 px-4 lg:px-0">
           <div className="max-w-[1200px] mx-auto  flex flex-col  gap-y-16">
