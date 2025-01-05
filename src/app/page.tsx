@@ -12,7 +12,7 @@ import { Filter } from "./components/Filter";
 
 export default function Home() {
 
-  console.log(generateHouses(10))
+
   return (
     <>
       <Header />
@@ -165,8 +165,10 @@ export default function Home() {
                 Some of our picked properties near you location.
               </h5>
             </div>
-            <Filter />
-            <Houses />
+           <Suspense fallback={<div>Loading...</div>}>
+           <Filter />
+           <Houses />
+           </Suspense>
           </div>
           
         </section>

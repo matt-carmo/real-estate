@@ -2,7 +2,7 @@
 import { HouseCard } from "./HouseCard";
 
 import { generateHouses, IHouse } from "../utils/generate-random-houses";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { locations } from "../utils/locations";
 export const Houses = () => {
@@ -49,11 +49,13 @@ export const Houses = () => {
 
   return (
     <>
+      <Suspense fallback={<div>Loading...</div>}>
       <ul className="grid lg:grid-cols-3 gap-10">
         {houses.map((house) => (
           <HouseCard key={house.id} house={house} />
         ))}
       </ul>
+      </Suspense>
       <button
         onClick={() => setPage(page + 1)}
         className="bg-[#100A55] text-white px-5 py-3 rounded-lg font-semibold mx-auto"
