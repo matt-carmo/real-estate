@@ -85,7 +85,7 @@ export default function Home() {
             <ul className="grid lg:grid-cols-2 gap-x-4 gap-y-14">
               <li className="flex lg:flex-col lg:gap-y-4">
                 <div className="w-48">
-                  <Image src="/icon.png" width={60} height={60} alt="" />
+                  <Image src="/icon-house.png" width={60} height={60} alt="" />
                 </div>
                 <div className="flex flex-col lg:gap-y-4">
                   <h2 className="text-primaryText font-bold text-2xl">
