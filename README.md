@@ -1,45 +1,81 @@
-# Real Estate
 
+---
 
+# 🏡 Website de Imobiliária Fictícia
 
-## Screenshots
+Este projeto é um **website responsivo e interativo** desenvolvido para uma **imobiliária fictícia**. Ele permite que os usuários explorem imóveis com base em filtros personalizados, como **estado** ou **cidade desejada**, proporcionando uma experiência intuitiva e eficiente de navegação.
 
-![Desktop Screenshot](/screenshots/desktop.png)
-![Mobile Screenshot](/screenshots/desktop.png)
+---
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 🌟 **Funcionalidades Principais**
 
-## Getting Started
+1. **Exibição de Imóveis**:
+   - Listagem dinâmica de propriedades com:
+     - Imagens, preços e localização.
+     - Número de quartos e banheiros.
+     - Área em metros quadrados.
+   - Suporte a busca e por estado e cidade.
 
-First, run the development server:
+2. **Responsividade**:
+   - Design responsivo para garantir uma navegação fluida em desktops e smartphones.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+3. **Design Moderno**:
+   - Baseado em um **template gratuito do Figma**.
+   - Layout adaptado às necessidades do setor imobiliário.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ **Tecnologias Utilizadas**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **[Next.js](https://nextjs.org/)**: Framework para desenvolvimento web rápido e otimizado.
+- **[Tailwind CSS](https://tailwindcss.com/)**: Estilização responsiva e personalizável.
+- **[TypeScript](https://www.typescriptlang.org/)**: Para maior segurança e escalabilidade do código.
+- **[Figma](https://www.figma.com/)**: Para design inicial e estruturação visual.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 **Como Executar o Projeto**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Pré-requisitos
+- Node.js (versão 18+ recomendada)
+- Gerenciador de pacotes `npm` ou `yarn`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Passos
 
-## Deploy on Vercel
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/matt-carmo/real-estate/
+   cd real-estate
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Instale as dependências:
+   ```bash
+   npm install
+   # ou
+   yarn install
+   # ou
+   pnpm install
+   # ou
+   bun install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   # ou
+   yarn dev
+   # ou
+   pnpm dev
+   # ou
+   bun dev
+   ```
+
+4. Acesse o site no navegador:
+   - Acesse [http://localhost:3000](http://localhost:3000)
+
+---
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
