@@ -5,6 +5,12 @@
 
 Este projeto é um **website responsivo e interativo** desenvolvido para uma **imobiliária fictícia**. Ele permite que os usuários explorem imóveis com base em filtros personalizados, como **estado** ou **cidade desejada**, proporcionando uma experiência intuitiva e eficiente de navegação.
 
+
+---
+
+## 👀 Demonstração
+![Desktop Screenshot](/screenshots/desktop.png)
+![Mobile Screenshot](/screenshots/mobile.png)
 ---
 
 ## 🌟 **Funcionalidades Principais**
